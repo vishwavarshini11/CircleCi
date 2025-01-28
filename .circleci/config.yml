@@ -1,21 +1,29 @@
-
 version: 2.1
-# Define a job we want to run for this projectjobs:
+
+# Define jobs for the project
 jobs:
- build:
-   docker:
-      -image: python3.8
-   steps: 
-       -checkout
-       -run:python Main1.py 
-   test:
-       docker:
-          -image:python3.8
-       steps:
-         -checkout
-         -run:python Test.py
+  build:
+    docker:
+      - image: python:3.8
+    steps:
+      - checkout
+      - run:
+          name: Run Main1.py
+          command: python Main1.py
+
+  test:
+    docker:
+      - image: python:3.8
+    steps:
+      - checkout
+      - run:
+          name: Run Test.py
+          command: python Test.py
+
+# Define workflows that specify job execution order
 workflows:
- build_and_test:
+  version: 2
+  build_and_test:
     jobs:
-     -build
-     -test
+      - build
+      - test
