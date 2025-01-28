@@ -5,10 +5,10 @@ jobs:
  build:
    docker:
       -image: python
-   steps:
-         -checkout
-         -run:python Main1.py 
-     test:
+   steps: 
+       -checkout
+       -run:python Main1.py 
+    test:
        docker:
           -image:python
        steps:
