@@ -9,9 +9,9 @@ jobs:
          -checkout
          -run:python Main1.py 
      test:
-         docker:
+       docker:
           -image:python
-        steps:
+       steps:
          -checkout
          -run:python Test.py
 workflows:
