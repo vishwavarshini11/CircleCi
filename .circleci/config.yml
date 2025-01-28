@@ -5,7 +5,7 @@ jobs:
  build:
    docker:
       -image: python
-      steps:
+   steps:
          -checkout
          -run:python Main1.py 
      test:
