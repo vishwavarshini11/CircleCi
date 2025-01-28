@@ -10,8 +10,8 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       - run:
-          name: Run main1.py
-          command: python main1.py
+          name: Run Main1.py
+          command: python Main1.py
 
   test:
     docker:
