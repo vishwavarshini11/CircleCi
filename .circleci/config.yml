@@ -4,13 +4,13 @@ version: 2.1
 jobs:
  build:
    docker:
-      -image: python
+      -image: python3.8
    steps: 
        -checkout
        -run:python Main1.py 
    test:
        docker:
-          -image:python
+          -image:python3.8
        steps:
          -checkout
          -run:python Test.py
